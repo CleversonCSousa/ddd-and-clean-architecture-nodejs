@@ -18,8 +18,9 @@
     "url": "https://github.com/CleversonCSousa/ddd-and-clean-architecture-nodejs/issues"
   },
   "homepage": "https://github.com/CleversonCSousa/ddd-and-clean-architecture-nodejs#readme",
-  "dependencies": {
+  "devDependencies": {
     "@types/node": "^24.3.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
   }
 }
