@@ -2,7 +2,7 @@ import { Slug } from "@/domain/entities/value-objects/slug";
 import { Entity } from "@/core/entities/entity";
 import { UniqueEntitityID } from "@/core/entities/unique-entity-id";
 import { Optional } from "@/core/types/optional";
-import dayjs from "dayjs"
+import dayjs from "dayjs";
 
 interface QuestionProps {
     authorId: UniqueEntitityID;
@@ -41,11 +41,11 @@ export class Question extends Entity<QuestionProps> {
     }
 
     get isNew() : boolean {
-        return dayjs().diff(this.createdAt, 'days') <= 3;
+        return dayjs().diff(this.createdAt, "days") <= 3;
     }
 
     get excerpt() {
-        return this.content.substring(0, 120).trimEnd().concat('...');
+        return this.content.substring(0, 120).trimEnd().concat("...");
     }
 
     get updatedAt() {
@@ -75,7 +75,7 @@ export class Question extends Entity<QuestionProps> {
 
 
 
-    static create(props: Optional<QuestionProps, 'createdAt' | 'slug'>, id?: UniqueEntitityID) {
+    static create(props: Optional<QuestionProps, "createdAt" | "slug">, id?: UniqueEntitityID) {
         const question = new Question({
             ...props,
             slug: props.slug ?? Slug.createFromText(props.title),
